@@ -4,7 +4,7 @@ public class Exercicio4 {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		int resto = 88;
+		int resto = 96;
 		System.out.println(Euclidise(144,resto, resto));
 	}	
 	public static int Euclidise(int num, int num2, int resto) 
@@ -28,7 +28,11 @@ public class Exercicio4 {
 			}
 			if(num % resto != 0) 
 			{
-				num2 = resto;
+				resto = num % resto;
+			}
+			if(num2 % resto != 0) 
+			{
+				resto = num2 % resto;
 			}
 			return Euclidise(num,num2, resto);
 		}
