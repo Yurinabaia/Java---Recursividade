@@ -4,19 +4,29 @@ public class Exercicio4 {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		System.out.println(Euclidise(144,96));
+		int resto = 60;
+		System.out.println(Euclidise(144,60, resto));
 	}	
-	public static int Euclidise(int num, int num2) 
+	public static int Euclidise(int num, int num2, int resto) 
 	{
-
-		if(num % num2 == 0) 
+		if(num % resto == 0 && num2 % resto == 0) 
 		{
-			return num2;
+			return resto;
 		}
-		else 
+		else
 		{
-			return Euclidise(num,num % num2);
+			if(num % num2 != 0) 
+			{
+				resto = num % num2;
+			}
+			if(num2 % num != 0) 
+			{
+				if(num2 % resto != 0) 
+				{
+					resto = num2 % resto;
+				}
+			}
+			return Euclidise(num,num2, resto);
 		}
 	}
-
 }
